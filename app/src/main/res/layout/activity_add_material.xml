@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mi_bg"
+    android:fitsSystemWindows="true">
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp" android:paddingEnd="12dp">
+        <TextView android:id="@+id/btnBack"
+            android:layout_width="40dp" android:layout_height="40dp"
+            android:gravity="center" android:text="‹" android:textSize="24sp"
+            android:textColor="@color/mi_text_primary"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+        <TextView android:id="@+id/tvTitle"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="添加材料" android:textSize="20sp"
+            android:textStyle="bold" android:textColor="@color/mi_text_primary" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_marginTop="12dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="材料名称 *" android:textSize="12sp" android:textColor="@color/mi_text_secondary" />
+                    <EditText android:id="@+id/etName"
+                        android:layout_width="match_parent" android:layout_height="44dp"
+                        android:background="@drawable/bg_input_field" android:hint="如：瓷砖、马桶"
+                        android:paddingHorizontal="12dp" android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="规格型号" android:textSize="12sp" android:textColor="@color/mi_text_secondary" />
+                    <EditText android:id="@+id/etSpec"
+                        android:layout_width="match_parent" android:layout_height="44dp"
+                        android:background="@drawable/bg_input_field" android:hint="品牌/型号/尺寸"
+                        android:paddingHorizontal="12dp" android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="数量" android:textSize="12sp" android:textColor="@color/mi_text_secondary" />
+                    <EditText android:id="@+id/etQuantity"
+                        android:layout_width="match_parent" android:layout_height="44dp"
+                        android:background="@drawable/bg_input_field" android:hint="如：10箱、20个"
+                        android:paddingHorizontal="12dp" android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="预算金额" android:textSize="12sp" android:textColor="@color/mi_text_secondary" />
+                    <EditText android:id="@+id/etBudget"
+                        android:layout_width="match_parent" android:layout_height="44dp"
+                        android:background="@drawable/bg_input_field" android:hint="预算金额"
+                        android:inputType="numberDecimal" android:paddingHorizontal="12dp"
+                        android:textSize="15sp" android:textColor="@color/mi_text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="实际金额" android:textSize="12sp" android:textColor="@color/mi_text_secondary" />
+                    <EditText android:id="@+id/etActual"
+                        android:layout_width="match_parent" android:layout_height="44dp"
+                        android:background="@drawable/bg_input_field" android:hint="实际花费"
+                        android:inputType="numberDecimal" android:paddingHorizontal="12dp"
+                        android:textSize="15sp" android:textColor="@color/mi_text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="购买人" android:textSize="12sp" android:textColor="@color/mi_text_secondary" />
+                    <EditText android:id="@+id/etBuyer"
+                        android:layout_width="match_parent" android:layout_height="44dp"
+                        android:background="@drawable/bg_input_field" android:hint="谁去买的"
+                        android:paddingHorizontal="12dp" android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="状态" android:textSize="12sp" android:textColor="@color/mi_text_secondary" />
+                    <Spinner android:id="@+id/spinnerStatus"
+                        android:layout_width="match_parent" android:layout_height="44dp"
+                        android:background="@drawable/bg_input_field"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="备注" android:textSize="12sp" android:textColor="@color/mi_text_secondary" />
+                    <EditText android:id="@+id/etNote"
+                        android:layout_width="match_parent" android:layout_height="80dp"
+                        android:background="@drawable/bg_input_field" android:hint="备注信息"
+                        android:paddingHorizontal="12dp" android:paddingVertical="10dp"
+                        android:textSize="15sp" android:textColor="@color/mi_text_primary"
+                        android:gravity="top" />
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:text="删除"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    style="@style/Widget.ConstructionDiary.Button.Danger"
+                    android:visibility="gone"
+                    android:layout_marginEnd="8dp" />
+                <Button android:id="@+id/btnSave"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:text="保存"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

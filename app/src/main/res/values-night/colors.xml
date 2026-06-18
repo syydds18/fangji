@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mi_bg">#1A1A1A</color>
+    <color name="mi_card">#2A2A2A</color>
+    <color name="mi_orange">#FF6900</color>
+    <color name="mi_text_primary">#E8E8E8</color>
+    <color name="mi_text_secondary">#999999</color>
+    <color name="mi_text_hint">#666666</color>
+    <color name="mi_divider">#333333</color>
+    <color name="mi_success">#66BB6A</color>
+    <color name="mi_danger">#FF5252</color>
+    <color name="mi_warning">#FFB74D</color>
+    <color name="mi_blue">#64B5F6</color>
+    <color name="mi_purple">#CE93D8</color>
+    <color name="mi_blue_gray">#90A4AE</color>
+    <color name="mi_input_bg">#333333</color>
+    <color name="mi_avatar_bg">#FF6900</color>
+    <color name="white">#E8E8E8</color>
+    <color name="black">#000000</color>
+</resources>

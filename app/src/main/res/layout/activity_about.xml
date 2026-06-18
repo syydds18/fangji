@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mi_bg"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <!-- Title Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp">
+        <TextView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="‹"
+            android:textSize="24sp"
+            android:textColor="@color/mi_text_primary"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/mi_text_primary" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="32dp">
+
+            <!-- App Icon -->
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginBottom="16dp" />
+
+            <!-- App Name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="房迹"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/mi_text_primary" />
+
+            <!-- Version -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="v1.0.0"
+                android:textSize="14sp"
+                android:textColor="@color/mi_text_secondary"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Features Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="功能介绍"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mi_text_primary"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📊 财务管理：记录建房花销和礼金收入"
+                    android:textSize="14sp"
+                    android:textColor="@color/mi_text_primary"
+                    android:lineSpacingExtra="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🧱 施工记录：材料清单、工人管理、施工日志"
+                    android:textSize="14sp"
+                    android:textColor="@color/mi_text_primary"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏠 房屋信息：户型图、房间管理、电器记录"
+                    android:textSize="14sp"
+                    android:textColor="@color/mi_text_primary"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="☁️ 云同步：多设备数据同步"
+                    android:textSize="14sp"
+                    android:textColor="@color/mi_text_primary"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📤 数据导出：支持导入导出备份"
+                    android:textSize="14sp"
+                    android:textColor="@color/mi_text_primary"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="4dp" />
+            </LinearLayout>
+
+            <!-- Contact Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系我们"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mi_text_primary"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📧 syydds@vip.qq.com"
+                    android:textSize="14sp"
+                    android:textColor="@color/mi_text_primary" />
+            </LinearLayout>
+
+            <!-- License Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开源协议"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/mi_text_primary"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="本应用基于 MIT 协议开源，仅供个人学习和非商业用途使用。未经授权，禁止用于商业目的。"
+                    android:textSize="14sp"
+                    android:textColor="@color/mi_text_secondary"
+                    android:lineSpacingExtra="4dp" />
+            </LinearLayout>
+
+            <!-- Copyright -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="© 2026 房迹"
+                android:textSize="12sp"
+                android:textColor="@color/mi_text_hint"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="20dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

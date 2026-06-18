@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ConstructionDiary">
+
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".PhotoViewActivity" android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".ui.expense.ExpenseListActivity" />
+        <activity android:name=".ui.expense.AddExpenseActivity" />
+        <activity android:name=".ui.gift.GiftListActivity" />
+        <activity android:name=".ui.gift.AddGiftActivity" />
+        <activity android:name=".ui.material.MaterialListActivity" />
+        <activity android:name=".ui.material.AddMaterialActivity" />
+        <activity android:name=".ui.worker.WorkerListActivity" />
+        <activity android:name=".ui.worker.AddWorkerActivity" />
+        <activity android:name=".ui.milestone.MilestoneListActivity" />
+        <activity android:name=".ui.photo.PhotoGalleryActivity" />
+        <activity android:name=".ui.floorplan.FloorPlanActivity" />
+        <activity android:name=".ui.export.ExportImportActivity" />
+        <activity android:name=".ui.settings.SettingsActivity" />
+        <activity android:name=".ui.stats.StatisticsActivity" />
+        <activity android:name=".ui.dailylog.DailyLogListActivity" />
+        <activity android:name=".ui.dailylog.AddDailyLogActivity" />
+        <activity android:name=".ui.supplier.SupplierListActivity" />
+        <activity android:name=".ui.supplier.AddSupplierActivity" />
+        <activity android:name=".ui.appliance.ApplianceListActivity" />
+        <activity android:name=".ui.appliance.AddApplianceActivity" />
+        <activity android:name=".ui.document.DocumentListActivity" />
+        <activity android:name=".ui.document.AddDocumentActivity" />
+        <activity android:name=".ui.maintenance.MaintenanceListActivity" />
+        <activity android:name=".ui.maintenance.AddMaintenanceActivity" />
+        <activity android:name=".ui.funding.FundingSourceListActivity" />
+        <activity android:name=".ui.funding.AddFundingSourceActivity" />
+
+        <activity android:name=".ui.cloud.CloudLoginActivity" />
+        <activity android:name=".ui.about.AboutActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+</manifest>

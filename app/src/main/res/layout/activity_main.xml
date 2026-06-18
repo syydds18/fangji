@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/mi_bg"
+    android:fitsSystemWindows="true">
+    <!-- Title Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="房迹"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/mi_text_primary" />
+        <TextView
+            android:id="@+id/btnSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚙️"
+            android:textSize="20sp"
+            android:paddingStart="12dp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="20dp">
+
+            <!-- Project Info Card -->
+            <LinearLayout
+                android:id="@+id/cardProjectInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/card_bg"
+                android:padding="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏠"
+                    android:textSize="24sp"
+                    android:layout_marginEnd="12dp" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvProjectAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="点击设置建房信息"
+                        android:textSize="16sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:id="@+id/tvProjectDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="设置 → 建房信息"
+                        android:textSize="13sp"
+                        android:textColor="@color/mi_text_secondary"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="›"
+                    android:textSize="20sp"
+                    android:textColor="@color/mi_text_hint" />
+            </LinearLayout>
+
+            <!-- Financial Summary Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💰 财务概览"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/mi_text_primary"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Stats Grid 2x2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <!-- Budget -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_stat_orange"
+                    android:padding="16dp"
+                    android:layout_marginEnd="6dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="启动资金"
+                        android:textSize="13sp"
+                        android:textColor="@color/mi_text_secondary" />
+                    <TextView
+                        android:id="@+id/tvBudget"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="¥0"
+                        android:textSize="16sp"
+                        android:maxLines="1"
+                        android:textStyle="bold"
+                        android:textColor="@color/mi_orange"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <!-- Expenses -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_stat_red"
+                    android:padding="16dp"
+                    android:layout_marginStart="6dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="总支出"
+                        android:textSize="13sp"
+                        android:textColor="@color/mi_text_secondary" />
+                    <TextView
+                        android:id="@+id/tvExpense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="¥0"
+                        android:textSize="16sp"
+                        android:maxLines="1"
+                        android:textStyle="bold"
+                        android:textColor="@color/mi_danger"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <!-- Gift Income -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_stat_green"
+                    android:padding="16dp"
+                    android:layout_marginEnd="6dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="礼金收入"
+                        android:textSize="13sp"
+                        android:textColor="@color/mi_text_secondary" />
+                    <TextView
+                        android:id="@+id/tvGift"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="¥0"
+                        android:textSize="16sp"
+                        android:maxLines="1"
+                        android:textStyle="bold"
+                        android:textColor="@color/mi_success"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <!-- Balance -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_stat_blue"
+                    android:padding="16dp"
+                    android:layout_marginStart="6dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="结余"
+                        android:textSize="13sp"
+                        android:textColor="@color/mi_text_secondary" />
+                    <TextView
+                        android:id="@+id/tvBalance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="¥0"
+                        android:textSize="16sp"
+                        android:maxLines="1"
+                        android:textStyle="bold"
+                        android:textColor="@color/mi_blue"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ========== 💰 财务管理 ========== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💰 财务管理"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/mi_text_secondary"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:padding="4dp"
+                android:layout_marginBottom="16dp">
+
+                <!-- Expense -->
+                <LinearLayout
+                    android:id="@+id/actionExpense"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💸"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="花销记录"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/mi_divider"
+                    android:layout_marginStart="48dp" />
+
+                <!-- Gift -->
+                <LinearLayout
+                    android:id="@+id/actionGift"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🧧"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="礼金记录"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/mi_divider"
+                    android:layout_marginStart="48dp" />
+                <!-- Funding Source -->
+                <LinearLayout
+                    android:id="@+id/actionFundingSource"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💰"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="出资记录"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/mi_divider"
+                    android:layout_marginStart="48dp" />
+
+                <!-- Statistics -->
+                <LinearLayout
+                    android:id="@+id/actionStats"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📊"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="统计报表"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ========== 🏗️ 施工管理 ========== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🏗️ 施工管理"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/mi_text_secondary"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:padding="4dp"
+                android:layout_marginBottom="16dp">
+
+                <!-- Material -->
+                <LinearLayout
+                    android:id="@+id/actionMaterial"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🧱"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="材料清单"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/mi_divider"
+                    android:layout_marginStart="48dp" />
+
+                <!-- Worker -->
+                <LinearLayout
+                    android:id="@+id/actionWorker"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="👷"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="工人管理"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/mi_divider"
+                    android:layout_marginStart="48dp" />
+
+                <!-- Supplier -->
+                <LinearLayout
+                    android:id="@+id/actionSupplier"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🏪"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="供应商管理"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/mi_divider"
+                    android:layout_marginStart="48dp" />
+
+                <!-- DailyLog -->
+                <LinearLayout
+                    android:id="@+id/actionDailyLog"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📝"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="施工日志"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ========== 🏠 房屋信息 ========== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🏠 房屋信息"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/mi_text_secondary"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:padding="4dp"
+                android:layout_marginBottom="16dp">
+
+                <!-- Milestone -->
+                <LinearLayout
+                    android:id="@+id/actionMilestone"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📅"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="建房大事记"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/mi_divider"
+                    android:layout_marginStart="48dp" />
+
+                <!-- Photo -->
+                <LinearLayout
+                    android:id="@+id/actionPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📸"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="进度相册"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/mi_divider"
+                    android:layout_marginStart="48dp" />
+
+                <!-- Floor Plan -->
+                <LinearLayout
+                    android:id="@+id/actionFloorPlan"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📐"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="户型图"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ========== 📦 更多功能 ========== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📦 更多功能"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/mi_text_secondary"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/card_bg"
+                android:padding="4dp"
+                android:layout_marginBottom="16dp">
+
+                <!-- Appliance -->
+                <LinearLayout
+                    android:id="@+id/actionAppliance"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📺"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="电器大件"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/mi_divider"
+                    android:layout_marginStart="48dp" />
+
+                <!-- Document -->
+                <LinearLayout
+                    android:id="@+id/actionDocument"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📋"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="证件资料"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/mi_divider"
+                    android:layout_marginStart="48dp" />
+
+                <!-- Maintenance -->
+                <LinearLayout
+                    android:id="@+id/actionMaintenance"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:background="?android:attr/selectableItemBackground">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔧"
+                        android:textSize="20sp"
+                        android:layout_marginEnd="12dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="维修记录"
+                        android:textSize="15sp"
+                        android:textColor="@color/mi_text_primary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textSize="20sp"
+                        android:textColor="@color/mi_text_hint" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

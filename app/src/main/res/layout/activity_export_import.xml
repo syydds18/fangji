@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/mi_bg" android:orientation="vertical"
+    android:fitsSystemWindows="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="48dp"
+        android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="12dp">
+        <TextView android:id="@+id/btnBack" android:layout_width="40dp" android:layout_height="40dp"
+            android:gravity="center" android:text="‹" android:textSize="24sp"
+            android:textColor="@color/mi_text_primary" android:background="?attr/selectableItemBackgroundBorderless" />
+        <TextView android:id="@+id/tvTitle" android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:textSize="20sp" android:textStyle="bold"
+            android:textColor="@color/mi_text_primary" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+        <!-- Export Card -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/card_bg" android:orientation="vertical"
+            android:padding="20dp" android:layout_marginBottom="12dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📤 导出全部数据" android:textSize="16sp" android:textStyle="bold"
+                android:textColor="@color/mi_text_primary" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="将所有花销、礼金、材料、工人、大事记、照片打包成ZIP文件，可分享给别人导入"
+                android:textSize="13sp" android:textColor="@color/mi_text_secondary"
+                android:layout_marginTop="8dp" />
+            <Button android:id="@+id/btnExport" android:layout_width="match_parent" android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:text="导出并分享" android:textColor="@color/white" android:textSize="15sp" />
+        </LinearLayout>
+        <!-- Import Card -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/card_bg" android:orientation="vertical"
+            android:padding="20dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📥 导入数据" android:textSize="16sp" android:textStyle="bold"
+                android:textColor="@color/mi_text_primary" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="从ZIP备份文件恢复数据（会覆盖当前数据）"
+                android:textSize="13sp" android:textColor="@color/mi_text_secondary"
+                android:layout_marginTop="8dp" />
+            <Button android:id="@+id/btnImport" android:layout_width="match_parent" android:layout_height="48dp"
+                android:layout_marginTop="16dp" style="@style/Widget.ConstructionDiary.Button.Secondary"
+                android:text="选择文件导入" android:textColor="@color/mi_text_primary" android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
